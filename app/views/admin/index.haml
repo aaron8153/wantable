@@ -1,0 +1,30 @@
+%h3
+  Users
+  %table.table.table-striped.users
+    %tr
+      %th.name
+        Name
+      %th.email
+        Email
+      -#%th.addy1
+      -#  Address
+      -#%th.addy2
+      -#  Address2
+      -#%th.city
+      -#  City
+      -#%th.state
+      -#  State
+      -#%th.zip
+      -#  Zip
+      -#%th.uid
+      -#  UID
+    - @users.each do |user|
+      %tr
+        %td.name= user.name
+        %td.email= user.email
+        -#%td.addy1= user.address.address1
+        -#%td.addy2= user.address.address2
+        -#%td.city = user.address.city
+        -#%td.state= user.address.state
+        -#%td.zip  = user.address.zipcode
+        -#%td.uid  = user.address.user_id

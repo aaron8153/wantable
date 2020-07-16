@@ -1,0 +1,19 @@
+%h3
+  Orders
+%table.table.table-striped.orders
+  %tr
+    %th.number
+      Number
+    %th.state
+      State
+    %th.user
+      Username
+    %th.email
+      Email
+  - @orders.each do |order|
+    %tr
+      %td.number= order.number
+      %td.state= order.state
+      %td.user= order.user.name
+      %td.email= order.user.email
+= paginate @orders

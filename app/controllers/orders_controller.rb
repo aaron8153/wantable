@@ -2,6 +2,7 @@ class OrdersController < ApplicationController
   before_action :find_order!, only: :show
 
   def index
+    @orders = Order.order(:number).page params[:page]
   end
 
   def show

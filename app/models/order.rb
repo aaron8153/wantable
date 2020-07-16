@@ -19,6 +19,8 @@ class Order < ApplicationRecord
   has_many :order_items
   has_many :payments
 
+  paginates_per 10
+
   def to_param
     number
   end
