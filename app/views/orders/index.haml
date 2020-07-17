@@ -29,7 +29,8 @@
         %th.email= sort_link @search, :user_email, "Email"
       - @orders.each do |order|
         %tr
-          %td.number= order.number
+          %td.number
+            = link_to order.number.to_s, order_path(order.number)
           %td.state{:class => order.state}= order.state.capitalize
           %td.user= order.user.name
           %td.email= order.user.email
