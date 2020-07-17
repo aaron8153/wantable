@@ -1,0 +1,16 @@
+%h2
+  Order Items
+%table.table.table-striped.order_items
+  %tr
+    %th.order_id= "Order ID"
+    %th.price= "Price"
+    %th.quantity= "Quantity"
+    %th.source_id= "Source Id"
+    %th.source_type= "Source Type"
+  - @order.order_items.each do |order_item|
+    %tr
+      %td.order_id= order_item.order_id
+      %td.price= order_item.price
+      %td.quantity= order_item.quantity
+      %td.source_id= order_item.source_id
+      %td.source_type= order_item.source_type

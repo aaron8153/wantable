@@ -1,0 +1,17 @@
+%h2
+  Address
+%table.table.table-striped.address
+  %tr
+    %th.address1= "Address"
+    %th.address2= "Address Cont."
+    %th.city= "City"
+    %th.state= "State"
+    %th.user_id= "User ID"
+    %th.zipcode= "Zip"
+  %tr
+    %td.address1= @order.address.address1
+    %td.address2= @order.address.address2
+    %td.city= @order.address.city
+    %td.state= @order.address.state
+    %td.user_id= @order.address.user_id
+    %td.zipcode= @order.address.zipcode

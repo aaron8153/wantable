@@ -38,7 +38,7 @@ body {
   margin-bottom: 20px;
 }
 
-table.orders {
+table {
   td {
     vertical-align:middle;
     &.arrived {
@@ -69,6 +69,58 @@ table.orders {
         content: 'warning';
         vertical-align:middle;
       }
+    }
+
+    &.completed {
+      &:after {
+        margin-left: 10px;
+        color: #63b109;
+        @extend .material-icons;
+        content: 'thumb_up';
+        vertical-align:middle;
+      }
+    }
+
+    &.refunded {
+      &:after {
+        margin-left: 10px;
+        color: #bd1a25;
+        @extend .material-icons;
+        content: 'thumb_down';
+        vertical-align:middle;
+      }
+    }
+  }
+}
+
+span {
+  &.arrived {
+    color: #63b109;
+    &:after {
+      margin-right: 10px;
+      @extend .material-icons;
+      content: 'thumb_up';
+      vertical-align:middle;
+    }
+  }
+
+  &.building {
+    color: cornflowerblue;
+    &:after {
+      margin-right: 10px;
+      @extend .material-icons;
+      content: 'timer';
+      vertical-align:middle;
+    }
+  }
+
+  &.canceled {
+    color: #bd1a25;
+    &:after {
+      margin-right: 10px;
+      @extend .material-icons;
+      content: 'warning';
+      vertical-align:middle;
     }
   }
 }

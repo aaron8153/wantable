@@ -1,0 +1,11 @@
+%h3
+  = "Order " + @order.number
+  %span{class: @order.state}= @order.state.capitalize
+
+.row.mb-20
+  .col-xs-12
+    = render :partial => "user"
+    = render :partial => "address"
+    = render :partial => "order_items"
+    = render :partial => "payments"
+

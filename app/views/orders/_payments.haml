@@ -1,0 +1,18 @@
+%h2
+  Payments
+%table.table.table-striped.payments
+  %tr
+    %th.amount= "Amount"
+    %th.completed_at= "Completed At"
+    %th.payment_type= "Payment Type"
+    %th.order_id= "Order Id"
+    %th.refunded_at= "Refunded At"
+    %th.state= "State"
+  - @order.payments.each do |payment|
+    %tr
+      %td.amount= payment.amount
+      %td.completed_at= payment.completed_at
+      %td.payment_type= payment.payment_type
+      %td.order_id= payment.order_id
+      %td.refunded_at= payment.refunded_at
+      %td.state{class: payment.state}= payment.state.capitalize
