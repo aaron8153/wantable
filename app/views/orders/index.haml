@@ -1,19 +1,36 @@
 %h3
   Orders
-%table.table.table-striped.orders
-  %tr
-    %th.number
-      Number
-    %th.state
-      State
-    %th.user
-      Username
-    %th.email
-      Email
-  - @orders.each do |order|
-    %tr
-      %td.number= order.number
-      %td.state= order.state
-      %td.user= order.user.name
-      %td.email= order.user.email
-= paginate @orders
+
+.row.mb-20
+  .col-xs-6
+    Search Form:
+    %br/
+    = search_form_for @search do |f|
+      = f.condition_fields do |c|
+        .row.mb-10
+          = c.attribute_fields do |a|
+            .col-xs-3.form-group
+              = a.attribute_select nil, class: 'form-control'
+          .col-xs-3.form-group
+            = c.predicate_select({only: [:cont, :lteq, :gteq]}, {class: 'form-control'})
+          = c.value_fields do |v|
+            .col-xs-6
+              = v.text_field :value, class: 'form-control'
+      = f.submit class: 'btn btn-primary'
+      = link_to "Reset Search", orders_path
+
+.row
+  .col-xs-12
+    %table.table.table-striped.orders
+      %tr
+        %th.number= sort_link @search, :number, "Number"
+        %th.state= sort_link @search, :state, "State"
+        %th.user= sort_link @search, :user_name, "User"
+        %th.email= sort_link @search, :user_email, "Email"
+      - @orders.each do |order|
+        %tr
+          %td.number= order.number
+          %td.state{:class => order.state}= order.state.capitalize
+          %td.user= order.user.name
+          %td.email= order.user.email
+    = paginate @orders

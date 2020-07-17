@@ -5,10 +5,70 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.material-icons {
+  direction: ltr;
+  display: inline-block;
+  font-family: 'Material Icons';
+  font-size: 24px;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: normal;
+  line-height: 1;
+  text-transform: none;
+  white-space: nowrap;
+  word-wrap: normal;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
 body {
   padding-top: 70px;
 }
 
 .navbar-brand {
   width: 200px;
+  height: 10px;
+}
+
+.mb-10 {
+  margin-bottom: 10px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+table.orders {
+  td {
+    vertical-align:middle;
+    &.arrived {
+      &:before {
+        margin-right: 10px;
+        color: #63b109;
+        @extend .material-icons;
+        content: 'thumb_up';
+        vertical-align:middle;
+      }
+    }
+
+    &.building {
+      &:before {
+        margin-right: 10px;
+        color: cornflowerblue;
+        @extend .material-icons;
+        content: 'timer';
+        vertical-align:middle;
+      }
+    }
+
+    &.canceled {
+      &:before {
+        margin-right: 10px;
+        color: #bd1a25;
+        @extend .material-icons;
+        content: 'warning';
+        vertical-align:middle;
+      }
+    }
+  }
 }
