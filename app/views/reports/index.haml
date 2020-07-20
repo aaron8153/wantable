@@ -1,0 +1,25 @@
+%h3
+  Coupon Users
+
+.row.mb-20
+  .col-xs-6
+    %form
+      = select_tag :coupon_id, options_from_collection_for_select(@coupons, "id", "name"), class: "form-control", "ic-post-to" => coupon_select_path, "ic-target" => "#results"
+.row
+  .col-xs-12#results
+    = render partial: "coupon_results", locals: {coupon: @coupons.first}
+
+%h3
+  Sales By Product
+
+.row.mb-20
+  .col-xs-4
+    #daterange{style: "background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc; width: 100%"}
+      %i.fa.fa-calendar
+        &nbsp;
+      %span
+      %i.fa.fa-caret-down
+    -# = select_tag :product_id, options_from_collection_for_select(@products, "id", "name"), class: "form-control", "ic-post-to" => coupon_select_path, "ic-target" => "#product-results"
+.row
+  .col-xs-12#product-results
+    = render partial: "product_sales", locals: {products: @products}

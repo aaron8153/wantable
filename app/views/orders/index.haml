@@ -25,13 +25,13 @@
       %tr
         %th.number= sort_link @search, :number, "Number"
         %th.state= sort_link @search, :state, "State"
-        %th.user= sort_link @search, :user_name, "User"
-        %th.email= sort_link @search, :user_email, "Email"
+        %th.user_name= sort_link @search, :user_name, "User"
+        %th.user_email= sort_link @search, :user_email, "Email"
       - @orders.each do |order|
         %tr
           %td.number
             = link_to order.number.to_s, order_path(order.number)
           %td.state{:class => order.state}= order.state.capitalize
-          %td.user= order.user.name
-          %td.email= order.user.email
+          %td.user_name= order.user.name
+          %td.user_email= order.user.email
     = paginate @orders

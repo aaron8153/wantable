@@ -41,6 +41,7 @@ gem 'ransack', github: 'activerecord-hackery/ransack'
 #Pagination
 gem 'kaminari'
 gem 'material_icons'
+gem 'font-awesome-rails'
 
 
 group :development, :test do

@@ -22,4 +22,7 @@ class OrderItem < ApplicationRecord
   belongs_to :order
   belongs_to :source,
              polymorphic: true
+
+  scope :sold, -> { where(state: 'sold')}
+  scope :ordered_between, ->(start_date, end_date) { where(created_at: start_date..end_date) }
 end

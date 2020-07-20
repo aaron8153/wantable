@@ -9,6 +9,9 @@
     = tag 'meta', {"http-equiv" => "Accept-CH", content: "width=device-width, initial-scale=1.0, user-scalable=no", name: "viewport", id: "vp"}, true
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag "https://cdn.jsdelivr.net/momentjs/latest/moment.min.js", :type => "text/javascript"
+    = javascript_include_tag "https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js", :type => "text/javascript"
+    = stylesheet_link_tag "https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css", :type => "text/css"
 
   %body
     %nav.navbar.navbar-default.navbar-fixed-top

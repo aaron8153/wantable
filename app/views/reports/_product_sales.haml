@@ -1,0 +1,17 @@
+%h2
+  Product Sales
+%table.table.table-striped.order_items
+  %tr
+    %th.name= "Product Name"
+    %th.sold_count= "Number Sold"
+    %th.revenue= "Revenue"
+  - products.each do |product|
+    - sold_count = 0
+    - revenue = 0
+    - product.order_items.each do |order_item|
+      - sold_count += order_item.quantity
+      - revenue += order_item.price * order_item.quantity
+    %tr
+      %td.name= product.name
+      %td.sold_count= sold_count
+      %td.revenue= revenue

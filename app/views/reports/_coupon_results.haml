@@ -1,0 +1,16 @@
+%h2
+  Order Items
+%table.table.table-striped.order_items
+  %tr
+    %th.order_id= "User Email"
+    %th.number_of= "Number of"
+    %th.before_coupons= "Total Before Coupons"
+    %th.coupons_amt= "Coupon Amount"
+    %th.revenue= "Revenue"
+  - coupon.order_items.each do |order_item|
+    %tr
+      %td.order_id= order_item.order.user.email
+      %td.number_of= order_item.quantity
+      %td.before_coupons= order_item.order.total
+      %td.coupons_amt= (order_item.price * order_item.quantity)
+      %td.revenue= order_item.order.total + (order_item.price * order_item.quantity)

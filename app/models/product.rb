@@ -27,4 +27,7 @@ class Product < ApplicationRecord
 
   has_many :order_items,
            as: :source
+
+  scope :with_sales_between_dates, ->(start_date, end_date) {
+    joins(:order_items).merge(OrderItem.sold.ordered_between(start_date, end_date)) }
 end
