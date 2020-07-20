@@ -11,6 +11,6 @@
     %tr
       %td.order_id= order_item.order.user.email
       %td.number_of= order_item.quantity
-      %td.before_coupons= order_item.order.total
-      %td.coupons_amt= (order_item.price * order_item.quantity)
-      %td.revenue= order_item.order.total + (order_item.price * order_item.quantity)
+      %td.before_coupons= number_to_currency order_item.order.total
+      %td.coupons_amt= number_to_currency (order_item.price * order_item.quantity)
+      %td.revenue= number_to_currency(order_item.order.total + (order_item.price * order_item.quantity))
