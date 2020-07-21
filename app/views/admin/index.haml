@@ -1,30 +1,12 @@
-%h3
-  Users
-  %table.table.table-striped.users
-    %tr
-      %th.name
-        Name
-      %th.email
-        Email
-      -#%th.addy1
-      -#  Address
-      -#%th.addy2
-      -#  Address2
-      -#%th.city
-      -#  City
-      -#%th.state
-      -#  State
-      -#%th.zip
-      -#  Zip
-      -#%th.uid
-      -#  UID
-    - @users.each do |user|
-      %tr
-        %td.name= user.name
-        %td.email= user.email
-        -#%td.addy1= user.address.address1
-        -#%td.addy2= user.address.address2
-        -#%td.city = user.address.city
-        -#%td.state= user.address.state
-        -#%td.zip  = user.address.zipcode
-        -#%td.uid  = user.address.user_id
+.jumbotron
+  %h1
+    Code Challenge for Wantable
+  %h2
+    Candidate: Aaron Jacobs
+  %p
+    = link_to "314.749.2604", "tel:13147492604"
+  %p
+    = link_to "Schedule a Meeting", "https://calendly.com/aaronejacobs/60min", {class: "btn btn-primary btn-lg", role: "button", target: "_blank"}
+  %p
+    = link_to "Resume", "https://docs.google.com/document/d/1I1e0q6zSkVxqTUhu2s8h8Bb_V67cai55Vyi0eH_lBAw/edit?usp=sharing", {class: "btn btn-primary btn-lg", role: "button", target: "_blank"}
+    = mail_to "aaron8153@gmail.com", "Email", {class: "btn btn-primary btn-lg", role: "button", target: "_blank"}
